@@ -1,0 +1,122 @@
+/*FUNÇÃO CORES*/
+:root{
+    --preto: #000;
+    --branco: #feffff;
+    --cinza: #8a8a8a;
+    --cinza-escuro: #1e1e1e;
+    --amarelo: #f1ec40;
+}
+
+/*CONFIG RESET CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*CONFIG BODY*/
+body {
+    background-color: var(--cinza-escuro);
+}
+
+body a {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+/*CONFIG CARD PRINCIPAL*/
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 400px;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: .5s;
+}
+
+/*CONFIG ROTAÇÃO DOS CARDS*/
+.card:hover .card-front {
+    transform: rotateX(-180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateX(0deg);
+}
+
+/*CONFIG CARD BACK*/
+.card-back h2 {
+    margin: 60% auto 35% auto;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-back {
+    font-size: 25px;
+}
+
+/*CONFIG CARD FRONT*/
+.card-front {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg-lucas.jpeg);
+    background-position: 50% 50%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--cinza);
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: .5s;
+}
+
+/*CONFIG CARD BACK*/
+.card-back {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--amarelo);
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: .5s;
+    color: #000;
+    text-align: center;
+}
+
+/*CONFIG BG SOBREPOSTO*/
+.bg-sobre {
+    border-radius: 5px;
+    background-image: url(bg-sobre.png);
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-back span {
+    color: var(--amarelo);
+}
+
+.card-back a {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    border-radius: 4px;
+    line-height: 20px;
+    transition: ease-in-out 0.1s;
+    color: var(--amarelo);
+}
+
+.card-back a:hover {
+    color: #000;
+    background-color: #fff;
+}
